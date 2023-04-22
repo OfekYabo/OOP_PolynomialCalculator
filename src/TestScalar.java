@@ -1,4 +1,5 @@
 public class TestScalar {
+    ///
     public static Scalar ConvertToScalar(String number)
     {
         int sign = 1;
