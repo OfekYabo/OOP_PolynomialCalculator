@@ -1,6 +1,6 @@
 public abstract class IRational implements Scalar {
-    final int Numerator;
-    final int Denominator;
+    public final int Numerator;
+    public final int Denominator;
 
     protected IRational(int numerator, int denominator) {
         Numerator = numerator;
@@ -14,11 +14,11 @@ public abstract class IRational implements Scalar {
 
     public abstract IRational reduce();
 
-    public boolean equals(Object s)
+    public boolean equals(Object o)
     {
-        if (s instanceof IRational)
+        if (o instanceof IRational)
         {
-            return this.Numerator == ((IRational)s).Numerator & this.Denominator == ((IRational)s).Denominator;
+            return this.Numerator == ((IRational)o).Numerator & this.Denominator == ((IRational)o).Denominator;
         }
         return false;
     }

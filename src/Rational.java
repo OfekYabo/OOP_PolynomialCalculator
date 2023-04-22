@@ -1,6 +1,6 @@
-public class RationalImp extends IRational{
+public class Rational extends IRational{
 
-    protected RationalImp(int numerator, int denominator) {
+    protected Rational(int numerator, int denominator) {
         /// comment GCD before
         /// - for the first one
         super(numerator, denominator);
@@ -14,7 +14,7 @@ public class RationalImp extends IRational{
 
     @Override
     public IRational reduce() {
-        return new RationalImp(this.Numerator, this.Denominator);
+        return new Rational(this.Numerator, this.Denominator);
     }
 
     @Override
@@ -22,10 +22,10 @@ public class RationalImp extends IRational{
         return s.add(this);
     }
     public Scalar add(IInteger i) {
-        return new RationalImp((i.Number*this.Denominator)+this.Numerator, this.Denominator);
+        return new Rational((i.Number*this.Denominator)+this.Numerator, this.Denominator);
     }
     public Scalar add(IRational r) {
-        return new RationalImp((r.Numerator*this.Denominator) + (r.Denominator*this.Numerator),  r.Denominator*this.Denominator);
+        return new Rational((r.Numerator*this.Denominator) + (r.Denominator*this.Numerator),  r.Denominator*this.Denominator);
     }
 
     @Override
@@ -33,14 +33,14 @@ public class RationalImp extends IRational{
         return s.mul(this);
     }
     public Scalar mul(IInteger i) {
-        return new RationalImp(i.Number*this.Numerator, this.Denominator);
+        return new Rational(i.Number*this.Numerator, this.Denominator);
     }
     public Scalar mul(IRational r) {
-        return new RationalImp(r.Numerator*this.Numerator, r.Denominator*this.Denominator);
+        return new Rational(r.Numerator*this.Numerator, r.Denominator*this.Denominator);
     }
     @Override
     public Scalar neg() {
-        return new RationalImp((-1)*this.Numerator, this.Denominator);
+        return new Rational((-1)*this.Numerator, this.Denominator);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class RationalImp extends IRational{
             bottom *= bottom;
             exponent--;
         }
-        IRational ans = new RationalImp(top, bottom);
+        IRational ans = new Rational(top, bottom);
         return ans;
     }
 
