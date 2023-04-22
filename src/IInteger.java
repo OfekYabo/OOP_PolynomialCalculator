@@ -1,5 +1,5 @@
 public abstract class IInteger implements Scalar {
-    final int Number;
+    public final int Number;
 
     protected IInteger(int number) {
         Number = number;
@@ -8,11 +8,11 @@ public abstract class IInteger implements Scalar {
     @Override
     public abstract String toString();
 
-    public boolean equals(Object s)
+    public boolean equals(Object o)
     {
-        if (s instanceof IInteger)
+        if (o instanceof IInteger)
         {
-            return this.Number == ((IInteger)s).Number;
+            return this.Number == ((IInteger)o).Number;
         }
         return false;
     }

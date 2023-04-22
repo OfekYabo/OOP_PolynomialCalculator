@@ -1,9 +1,9 @@
-public class IntegerImp extends IInteger {
+public class Integer extends IInteger {
 
-    IntegerImp(int number)
-    {
+    protected Integer(int number) {
         super(number);
     }
+
     @Override
     public String toString(){
         return String.valueOf(this.Number);
@@ -14,7 +14,7 @@ public class IntegerImp extends IInteger {
         return s.add(this);
     }
     public Scalar add(IInteger s) {
-        return new IntegerImp( s.Number+this.Number);
+        return new Integer( s.Number+this.Number);
     }
 
     @Override
@@ -22,12 +22,12 @@ public class IntegerImp extends IInteger {
         return s.mul(this);
     }
     public Scalar mul(IInteger i) {
-        return new IntegerImp(i.Number * this.Number);
+        return new Integer(i.Number * this.Number);
     }
 
     @Override
     public Scalar neg() {
-        return new IntegerImp(this.Number*(-1));
+        return new Integer(this.Number*(-1));
     }
 
     @Override
@@ -37,7 +37,7 @@ public class IntegerImp extends IInteger {
             base *=base;
             exponent--;
         }
-        IntegerImp ans = new IntegerImp(base);
+        Integer ans = new Integer(base);
         return ans;
     }
 

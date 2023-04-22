@@ -1,14 +1,43 @@
 public class TestScalar {
+    public static Scalar ConvertToScalar(String number)
+    {
+        int sign = 1;
+        if (number.contains("-")) { sign = -1; }
+        if (number.contains("/"))
+        {
+            String[] parts = number.split("/");
+            Rational n1 = new Rational(parseInt(parts[0], sign), parseInt(parts[1], sign));
+            return n1;
+        }
+        else
+        {
+            int num1 = parseInt(number, sign);
+            Integer n1 = new Integer(num1);
+            return n1;
+        }
+    }
+
+    public static int parseInt(String number, int sign) {
+        int result = 0;
+        for (int i = 0; i < number.length(); i++) {
+            result = result * 10 + number.charAt(i) - '0';
+        }
+        return result * sign;
+    }
+
+///-------Scalar Function Tests--------
     public static boolean add(String number1, String number2, String answer)
     {
-        Scalar[] arr = ConvertToScalar(number1, number2);
-        return answer.equals((arr[1].add(arr[2])).toString());
+        Scalar n1 = ConvertToScalar(number1);
+        Scalar n2 = ConvertToScalar(number2);
+        return answer.equals((n1.add(n2)).toString());
     }
 
     public static boolean mul(String number1, String number2, String answer)
     {
-        Scalar[] arr = ConvertToScalar(number1, number2);
-        return answer.equals((arr[1].mul(arr[2])).toString());
+        Scalar n1 = ConvertToScalar(number1);
+        Scalar n2 = ConvertToScalar(number2);
+        return answer.equals((n1.mul(n2)).toString());
     }
 
     public static boolean neg(String number1, String answer)
@@ -31,55 +60,17 @@ public class TestScalar {
 
     public static boolean equals(String number1, String number2, boolean answer)
     {
-        Scalar[] arr = ConvertToScalar(number1, number2);
-        if (answer) return arr[1].equals(arr[2]);
-        else return !arr[1].equals(arr[2]);
+        Scalar n1 = ConvertToScalar(number1);
+        Scalar n2 = ConvertToScalar(number2);
+        if (answer) return n1.equals(n2);
+        else return !n1.equals(n2);
     }
 
 
-    private static Scalar[] ConvertToScalar(String number1, String number2)
-    {
-        Scalar[] arr = new Scalar[2];
-        try
-        {
-            int num1 = Integer.parseInt(number1);
-            IntegerImp n1 = new IntegerImp(num1);
-            arr[0] = n1;
-        }
-        catch (NumberFormatException e) {
-            String[] parts = number1.split("/");
-            RationalImp n1 = new RationalImp(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
-            arr[0] = n1;
-        }
-        try
-        {
-            int num2 = Integer.parseInt(number2);
-            IntegerImp n2 = new IntegerImp(num2);
-            arr[1] = n2;
-        }
-        catch (NumberFormatException e) {
-            String[] parts = number2.split("/");
-            RationalImp n2 = new RationalImp(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
-            arr[1] = n2;
-        }
-        return arr;
-    }
-
-    private static Scalar ConvertToScalar(String number1)
-    {
-        try
-        {
-            int num1 = Integer.parseInt(number1);
-            IntegerImp n1 = new IntegerImp(num1);
-            return n1;
-        }
-        catch (NumberFormatException e) {
-            String[] parts = number1.split("/");
-            RationalImp n1 = new RationalImp(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
-            return n1;
-        }
-    }
+///-------Monomial Function Tests--------
 
 
 
-    }
+
+
+}
