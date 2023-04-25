@@ -1,8 +1,12 @@
+package Calculator;
+
+import Calculator.Scalar;
+
 public class TestScalar {
     ///
 
 
-///-------Scalar Function Tests--------
+///-------Calculator.Scalar Function Tests--------
     public static boolean add(String number1, String number2, String answer)
     {
         Scalar n1 = Program.ConvertToScalar(number1);
@@ -44,7 +48,7 @@ public class TestScalar {
     }
 
 
-///-------Monomial Function Tests--------
+///-------Calculator.Monomial Function Tests--------
 
 
 

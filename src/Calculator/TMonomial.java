@@ -1,7 +1,11 @@
+package Calculator;
+
+import Calculator.Scalar;
+
 public class TMonomial {
 
 
-    ///-------Monomial Function Tests--------
+    ///-------Calculator.Monomial Function Tests--------
 ///
     public static boolean add(String monomial1, String monomial2, String answer)
     {

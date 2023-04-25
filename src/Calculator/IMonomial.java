@@ -1,3 +1,5 @@
+package Calculator;
+
 public abstract class IMonomial {
     public final int Exponent;
     public final Scalar Coefficient;
@@ -24,8 +26,8 @@ public abstract class IMonomial {
     {
         String ans;
         boolean noExponent = this.Exponent == 1;
-        boolean noCoeffient = this.Coefficient.toString().equals(new Integer(1).toString());
-        boolean negCoeffient = this.Coefficient.toString().equals(new Integer(-1).toString());
+        boolean noCoeffient = this.Coefficient.toString().equals(new IntegerScalar(1).toString());
+        boolean negCoeffient = this.Coefficient.toString().equals(new IntegerScalar(-1).toString());
         if(negCoeffient) {  ans = "-x"; }
         else if(!noCoeffient) { ans = this.Coefficient.toString() + "x";}
         else { ans = "x"; }
