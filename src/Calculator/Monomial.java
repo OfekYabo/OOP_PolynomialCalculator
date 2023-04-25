@@ -1,3 +1,5 @@
+package Calculator;
+
 public class Monomial extends IMonomial {
     protected Monomial(int Exponent, Scalar Coefficient) {
         super(Exponent, Coefficient);
@@ -21,7 +23,7 @@ public class Monomial extends IMonomial {
     }
     @Override
     public Monomial derivative() {
-        return new Monomial(this.Exponent -1, this.Coefficient.mul(new Integer(this.Exponent)));
+        return new Monomial(this.Exponent -1, this.Coefficient.mul(new IntegerScalar(this.Exponent)));
     }
     @Override
     public int sign() {

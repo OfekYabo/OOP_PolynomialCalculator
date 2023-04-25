@@ -1,3 +1,8 @@
+package Calculator;
+
+import Calculator.RationalScalar;
+import Calculator.Scalar;
+
 public class Program {
 
     public static Scalar ConvertToScalar(String number)
@@ -7,13 +12,13 @@ public class Program {
         if (number.contains("/"))
         {
             String[] parts = number.split("/");
-            Scalar n1 = new Rational(parseInt(parts[0], sign), parseInt(parts[1], sign));
+            Scalar n1 = new RationalScalar(parseInt(parts[0], sign), parseInt(parts[1], sign));
             return n1;
         }
         else
         {
             int num1 = parseInt(number, sign);
-            Scalar n1 = new Integer(num1);
+            Scalar n1 = new IntegerScalar(num1);
             return n1;
         }
     }
@@ -29,7 +34,7 @@ public class Program {
                 String exponent = arr[0].substring(1);
                 int sign = 1;
                 if (exponent.contains("-")) { sign = -1; }
-                return ans = new Monomial(parseInt(exponent, sign), new Integer(1));
+                return ans = new Monomial(parseInt(exponent, sign), new IntegerScalar(1));
             }
             else
             {
