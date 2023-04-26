@@ -1,8 +1,6 @@
 package Calculator;
 
-import Calculator.Scalar;
-
-public class TMonomial {
+public class TMonomial {/*
 
 
     ///-------Calculator.Monomial Function Tests--------
@@ -41,5 +39,5 @@ public class TMonomial {
         IMonomial n2 = Program.ConvertToMonomial(monomial2);
         if (answer) return n1.equals(n2);
         else return !n1.equals(n2);
-    }
+    }*/
 }

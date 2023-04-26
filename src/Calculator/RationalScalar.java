@@ -6,19 +6,16 @@ public class RationalScalar implements Scalar {
 
     protected RationalScalar(int numerator, int denominator) {
        int[] arr = reduce(numerator, denominator);
-       boolean neg = arr[0] < 0;
        if (arr[1] < 0) {
-           neg = !neg;
-       }
-       if (neg) {
-           Numerator = -arr[0];
            Denominator = -arr[1];
+           Numerator = -arr[0];
        }
        else {
-           Numerator = arr[0];
            Denominator = arr[1];
+           Numerator = arr[0];
        }
     }
+
     private int gcd(int a, int b)
     {
         if (b == 0)
@@ -60,12 +57,18 @@ public class RationalScalar implements Scalar {
     public Scalar power(int exponent) {
         int top = this.Numerator;
         int bottom = this.Denominator;
-        while (exponent>0){
-            top *= top;
-            bottom *= bottom;
+        int newtop = top;
+        int newbottom = bottom;
+        if( exponent == 0) {
+            newtop = 1;
+            newbottom = 1;
+        }
+        while (exponent>1){
+            newtop = newtop * top;
+            newbottom = newbottom * bottom;
             exponent--;
         }
-        RationalScalar ans = new RationalScalar(top, bottom);
+        RationalScalar ans = new RationalScalar(newtop, newbottom);
         return ans;
     }
     public int sign() {
@@ -82,7 +85,7 @@ public class RationalScalar implements Scalar {
     {
         if (o instanceof Scalar)
         {
-            return this.toString() == ((Scalar)o).toString();
+            return this.toString().equals(((Scalar)o).toString());
         }
         return false;
     }

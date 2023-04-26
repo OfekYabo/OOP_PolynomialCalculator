@@ -33,12 +33,16 @@ public class IntegerScalar implements Scalar{
     }
     public Scalar power(int exponent) {
         int base = this.Number;
-        while (0 < exponent){
-            base *= base;
+        int ans = base;
+        if( exponent == 0) {
+            ans = 1;
+        }
+        while (1 < exponent){
+            ans = ans *base;
             exponent--;
         }
-        Scalar ans = new IntegerScalar(base);
-        return ans;
+        Scalar result = new IntegerScalar(ans);
+        return result;
     }
     public int sign() {
         int ans = 1;
@@ -52,7 +56,7 @@ public class IntegerScalar implements Scalar{
     public boolean equals(Object o) {
         if (o instanceof Scalar)
         {
-            return this.toString() == ((Scalar)o).toString();
+            return this.toString().equals(((Scalar)o).toString());
         }
         return false;
     }
