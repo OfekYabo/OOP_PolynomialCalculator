@@ -1,32 +1,56 @@
 package Calculator;
 
-public class Monomial extends IMonomial {
-    protected Monomial(int Exponent, Scalar Coefficient) {
-        super(Exponent, Coefficient);
+public class Monomial {
+    public final int Exponent;
+    public final Scalar Coefficient;
+
+    public Monomial(int exponent, Scalar coefficient) {
+        Exponent = exponent;
+        Coefficient = coefficient;
     }
 
-
-    @Override
-    public IMonomial add(IMonomial m) {
+    public Monomial add(Monomial m) {
         if (this.Exponent != m.Exponent) { throw new IllegalArgumentException("Exponent must be equals"); }
         return new Monomial(this.Exponent, this.Coefficient.add(m.Coefficient));
     }
 
-    @Override
-    public Monomial mul(IMonomial m) {
+    public Monomial mul(Monomial m) {
         return new Monomial(this.Exponent + m.Exponent, this.Coefficient.mul(m.Coefficient));
     }
 
-    @Override
     public Scalar evaluate(Scalar s) {
         return s.power(this.Exponent).mul(this.Coefficient);
     }
-    @Override
     public Monomial derivative() {
         return new Monomial(this.Exponent -1, this.Coefficient.mul(new IntegerScalar(this.Exponent)));
     }
-    @Override
     public int sign() {
         return this.Coefficient.sign();
+    }
+    public boolean equals(Object o)
+    {
+        /*if (o instanceof Monomial)
+        {
+            //return this.Exponent == ((Monomial) o).Exponent & this.Coefficient.equals((Monomial)((Monomial) o).Coefficient);
+        }
+        return false;*/
+        return this.toString().equals(o.toString());
+    }
+    public String toString()
+    {
+        if (this.Exponent == 0) {
+            return this.Coefficient.toString();
+        } else if (this.Coefficient.toString().equals("0") | this.Exponent==-1) {
+            return new IntegerScalar(0).toString();
+        }
+        String ans;
+        boolean noExponent = this.Exponent == 1;
+        boolean noCoeffient = this.Coefficient.toString().equals(new IntegerScalar(1).toString());
+        boolean negCoeffient = this.Coefficient.toString().equals(new IntegerScalar(-1).toString());
+        if(negCoeffient) {  ans = "-x"; }
+        else if(!noCoeffient) { ans = this.Coefficient.toString() + "x";}
+        else { ans = "x"; }
+        if (!noExponent) { ans = ans + "^" + this.Exponent; }
+        return ans;
     }
 }
