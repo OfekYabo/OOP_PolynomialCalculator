@@ -40,8 +40,8 @@ public class Monomial {
     {
         if (this.Exponent == 0) {
             return this.Coefficient.toString();
-        } else if (this.Coefficient.toString().equals("0")) {
-            return "0";
+        } else if (this.Coefficient.toString().equals("0") | this.Exponent==-1) {
+            return new IntegerScalar(0).toString();
         }
         String ans;
         boolean noExponent = this.Exponent == 1;

@@ -4,7 +4,7 @@ public class IntegerScalar implements Scalar{
 
     public final int Number;
 
-    protected IntegerScalar(int number) {
+    public IntegerScalar(int number) {
         Number = number;
     }
     public Scalar add(Scalar s) {

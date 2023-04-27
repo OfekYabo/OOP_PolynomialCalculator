@@ -70,7 +70,7 @@ class MonomialTest {
     @Test
     void test_n2__0toString() {assertEquals("2", n2__0.toString());}
     @Test
-    void test_nm4_3__3toString() {assertEquals("x^2", n1__2.toString());}
+    void test_nm4_3__3toString() {assertEquals("-4/3x^3", nm4_3__3.toString());}
     @Test
     void test_nm4__4toString() {assertEquals("-4x^4", nm4__4.toString());}
     @Test
@@ -145,7 +145,31 @@ class MonomialTest {
     @Test
     void nm4__4__evaluate__nm4()  { assertEquals("-1024", nm4__4.evaluate(nm4).toString()); }
 
+
+
+    //Test derivative
     @Test
-    void derivative() {
-    }
+    void test_n0__1_derivative() {assertEquals("0", n0__1.derivative().toString());}
+    @Test
+    void test_n0__9derivative() {assertEquals("0", n0__9.derivative().toString());}
+    @Test
+    void test_n1__2derivative() {assertEquals("2x", n1__2.derivative().toString());}
+    @Test
+    void test_n1__1derivative() {assertEquals("1", n1__1.derivative().toString());}
+    @Test
+    void test_n2__0derivative() {assertEquals("0", n2__0.derivative().toString());}
+    @Test
+    void test_nm4_3__3derivative() {assertEquals("-4x^2", nm4_3__3.derivative().toString());}
+    @Test
+    void test_nm4__4derivative() {assertEquals("-16x^3", nm4__4.derivative().toString());}
+    @Test
+    void test_n5__3derivative() {assertEquals("15x^2", n5__3.derivative().toString());}
+    @Test
+    void test_n2__10derivative() {assertEquals("20x^9", n2__10.derivative().toString());}
+    @Test
+    void test_n1_2__2derivative() {assertEquals("x", n1_2__2.derivative().toString());}
+    @Test
+    void test_nm1_2__2derivative() {assertEquals("-x", nm1_2__2.derivative().toString());}
+    @Test
+    void test_n5__0derivative() {assertEquals("0", n5__0.derivative().toString());}
 }
