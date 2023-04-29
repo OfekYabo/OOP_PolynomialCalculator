@@ -9,6 +9,13 @@ public class Monomial {
         Coefficient = coefficient;
     }
 
+    public int getExponent() {
+        return Exponent;
+    }
+    public Scalar getCoefficient() {
+        return Coefficient;
+    }
+
     public Monomial add(Monomial m) {
         if (this.Exponent != m.Exponent) { throw new IllegalArgumentException("Exponent must be equals"); }
         return new Monomial(this.Exponent, this.Coefficient.add(m.Coefficient));

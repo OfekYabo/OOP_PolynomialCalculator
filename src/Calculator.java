@@ -1,5 +1,4 @@
-import Calculator.IntegerScalar;
-import Calculator.Polynomial;
+import Calculator.*;
 
 import java.util.Scanner;
 
