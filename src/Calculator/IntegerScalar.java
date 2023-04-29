@@ -56,7 +56,7 @@ public class IntegerScalar implements Scalar{
     public boolean equals(Object o) {
         if (o instanceof Scalar)
         {
-            return this.toString().equals(((Scalar)o).toString());
+            return this.toString().equals((o).toString());
         }
         return false;
     }

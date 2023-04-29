@@ -99,7 +99,7 @@ public class Polynomial {
     }
 
     public boolean equals(Object o) {
-        if (o instanceof Polynomial) {
+        /*if (o instanceof Polynomial) {
             Polynomial input = (Polynomial) o;
             Map<Integer, Monomial> inputMonos = input.getTreeMap();
             if (monomials.keySet().equals(inputMonos.keySet())) {
@@ -116,7 +116,8 @@ public class Polynomial {
             }
             return false;
         }
-        return false;
+        return false;*/
+        return this.toString().equals(o.toString());
     }
 
     public String toString() {
@@ -152,7 +153,7 @@ public class Polynomial {
     private static Scalar stringToRational(String s) {
         int numerator = Integer.parseInt(s.split("/")[0]);
         int denominator = Integer.parseInt(s.split("/")[1]);
-        Scalar coef = new Rational(numerator, denominator);
+        Scalar coef = new RationalScalar(numerator, denominator);
         return coef;
     }
     private static Scalar stringToIntegerScalar(String s) {

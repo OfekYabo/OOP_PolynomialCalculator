@@ -16,8 +16,14 @@ public class RationalScalar implements Scalar {
        }
     }
 
-    private int gcd(int a, int b)
-    {
+    public int getDenominator() {
+        return Denominator;
+    }
+    public int getNumerator() {
+        return Numerator;
+    }
+
+    private int gcd(int a, int b) {
         if (b == 0)
             return a;
         else
@@ -81,11 +87,10 @@ public class RationalScalar implements Scalar {
         if(this.Denominator == 1) return String.valueOf(this.Numerator);
         else return String.valueOf(this.Numerator)+ "/" + String.valueOf(this.Denominator);
     }
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (o instanceof Scalar)
         {
-            return this.toString().equals(((Scalar)o).toString());
+            return this.toString().equals((o).toString());
         }
         return false;
     }
