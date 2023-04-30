@@ -34,13 +34,7 @@ public class Monomial {
     public int sign() {
         return this.Coefficient.sign();
     }
-    public boolean equals(Object o)
-    {
-        /*if (o instanceof Monomial)
-        {
-            //return this.Exponent == ((Monomial) o).Exponent & this.Coefficient.equals((Monomial)((Monomial) o).Coefficient);
-        }
-        return false;*/
+    public boolean equals(Object o) {
         return this.toString().equals(o.toString());
     }
     public String toString()
