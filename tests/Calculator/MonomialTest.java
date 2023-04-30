@@ -1,10 +1,9 @@
 package Calculator;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MonomialTest {
     private static Scalar n0;
@@ -113,8 +112,6 @@ class MonomialTest {
     void n1_2__2__add__nm1_2__2()  { assertEquals("0", n1_2__2.add(nm1_2__2).toString()); }
     @Test
     void n5__3__add__nm4_3__3()  { assertEquals("11/3x^3", nm4_3__3.add(n5__3).toString()); }
-    //@Test
-    //void n5__0__add__nm4_3__3()  { assertEquals("Exponent must be equals", nm4_3__3.add(n5__0).toString()); }
 
 
 

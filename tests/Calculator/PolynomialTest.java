@@ -101,10 +101,6 @@ class PolynomialTest {
     void nm2_2___testDerivative() {assertEquals("2", nm2_2.derivative().toString());}
     @Test
     void n1__2_m1__2___testDerivative() {assertEquals("-1/2", n1__2_m1__2.derivative().toString());}
-   /* @Test
-    void n5___testDerivative() {assertEquals("0", n5.derivative().toString());}
-    @Test
-    void n10__m2___testDerivative() {assertEquals("0", n10__m2.derivative().toString());}*/
 
 
     //Test Add

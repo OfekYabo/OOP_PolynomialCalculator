@@ -99,24 +99,6 @@ public class Polynomial {
     }
 
     public boolean equals(Object o) {
-        /*if (o instanceof Polynomial) {
-            Polynomial input = (Polynomial) o;
-            Map<Integer, Monomial> inputMonos = input.getTreeMap();
-            if (monomials.keySet().equals(inputMonos.keySet())) {
-                for (Map.Entry<Integer,Monomial> entry : inputMonos.entrySet()) {
-                    int exponent = entry.getKey();
-                    Monomial m1 = monomials.get(exponent);
-                    Monomial m2 = entry.getValue();
-                    if (!m1.equals(m2)) {
-                        return false;
-                    }
-                }
-                return true;
-
-            }
-            return false;
-        }
-        return false;*/
         return this.toString().equals(o.toString());
     }
 

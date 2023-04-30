@@ -15,14 +15,12 @@ public class RationalScalar implements Scalar {
            Numerator = arr[0];
        }
     }
-
     public int getDenominator() {
         return Denominator;
     }
     public int getNumerator() {
         return Numerator;
     }
-
     private int gcd(int a, int b) {
         if (b == 0)
             return a;
