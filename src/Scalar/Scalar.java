@@ -1,4 +1,4 @@
-package Calculator;
+package Scalar;
 
 public interface Scalar {
     Scalar add(Scalar s);

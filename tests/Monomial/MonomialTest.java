@@ -1,5 +1,5 @@
-package Calculator;
-
+package Monomial;
+import Scalar.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

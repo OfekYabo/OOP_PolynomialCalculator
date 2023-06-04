@@ -1,6 +1,6 @@
-package Calculator;
+package Scalar;
 
-public class IntegerScalar implements Scalar{
+public class IntegerScalar implements Scalar {
 
     public final int Number;
 

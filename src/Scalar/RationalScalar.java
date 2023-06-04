@@ -1,10 +1,10 @@
-package Calculator;
+package Scalar;
 
 public class RationalScalar implements Scalar {
     public final int Numerator;
     public final int Denominator;
 
-    protected RationalScalar(int numerator, int denominator) {
+    public RationalScalar(int numerator, int denominator) {
        int[] arr = reduce(numerator, denominator);
        if (arr[1] < 0) {
            Denominator = -arr[1];

@@ -1,4 +1,5 @@
-package Calculator;
+package Monomial;
+import Scalar.*;
 
 public class Monomial {
     public final int Exponent;

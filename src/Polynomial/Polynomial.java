@@ -1,4 +1,7 @@
-package Calculator;
+package Polynomial;
+import Monomial.*;
+import Scalar.*;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;

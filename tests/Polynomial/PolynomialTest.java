@@ -1,10 +1,12 @@
-package Calculator;
+package Polynomial;
 
+import Monomial.Monomial;
+import Scalar.IntegerScalar;
+import Scalar.RationalScalar;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PolynomialTest {
     private static Polynomial n1_1_1_1_1;
